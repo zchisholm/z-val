@@ -8,26 +8,26 @@ import Link from "next/link";
 
 export default function ExperimentsList() {
   interface Experiment {
-    id: string; // Firestore document ID
+    id: string;
     name: string;
     systemPrompt?: string;
     models?: string[];
     testCases?: TestCase[];
-    // You might also have timestamps, e.g. createdAt, updatedAt, etc.
+
   }
 
   interface TestCase {
     prompt: string;
     expected?: string;
     responses?: Record<
-      string, // model name
+      string, 
       {
         content: string;
         time: number;
         metrics?: {
           factualityScore?: number;
           relevanceScore?: number;
-          // other metrics as needed
+
         };
       }
     >;
