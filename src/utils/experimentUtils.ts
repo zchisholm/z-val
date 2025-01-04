@@ -40,22 +40,22 @@ export async function runExperiment(
           const timeNum = parseFloat(time);
 
           // Evaluate metrics via DeepEval
-        const { factualityScore, relevanceScore } = await runDeepEvalMetrics(
+          /* const { factualityScore, relevanceScore } = await runDeepEvalMetrics(
             content,
             testCase.expected
-          ); 
+          ); */
 
           newResponses[model] = {
             content,
             time: timeNum,
             metrics: {
-              factualityScore,
-              relevanceScore,
+              // factualityScore,
+              // relevanceScore,
             },
           };
         } catch (err) {
           newResponses[model] = {
-            content: "Error calling model" + {err},
+            content: "Error calling model" + { err },
             time: 0,
           };
         }
